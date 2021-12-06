@@ -14,20 +14,14 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        val data = flowOf(1,2,3,4,5).flowOn(Dispatchers.IO)
+
         runBlocking {
-            getData().catch { e ->
-                Log.d("main", "onCreate: ${e.message}")
-            }.collect {
-                Log.d("main", "data is=== $it")
+            data.collect {
+                Log.d("main", "onCreate: $it")
             }
         }
 
     }
-
-    private fun getData(): Flow<Int> = flow {
-        for (i in 1..5) {
-            kotlinx.coroutines.delay(1000)
-            emit(i)
-        }
-    }.flowOn(Dispatchers.IO)
 }
