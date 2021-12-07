@@ -22,6 +22,26 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <EditText
+            android:id="@+id/username"
+            android:layout_width="match_parent"
+            app:layout_constraintBottom_toTopOf="@id/network"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginHorizontal="16dp"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:id="@+id/network"
+            app:layout_constraintBottom_toTopOf="@id/textId"
+            android:textSize="20sp"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_height="wrap_content" />
+
 
         <LinearLayout
             app:layout_constraintTop_toBottomOf="@id/textId"
